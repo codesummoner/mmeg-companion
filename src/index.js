@@ -6,17 +6,20 @@
  *   -| creatures
  *   -| skills
  *   -| stats
- *   -| report
+ *   -| report error
  */
 
 import React from 'react';
 import ReactDOM from 'react-dom';
-import { createStore, combineReducers } from 'redux';
-import { creatures } from './data/creatures';
-import { skills } from './data/skills';
+import { Provider } from 'react-redux';
+import { createStore, applyMiddleware, compose } from 'redux';
+import thunk from 'redux-thunk';
+import reducer from './reducers';
+import { getCreatures } from './reducers/creatures/actions';
 
 import App from './components/App';
 
+/*
 const creaturesReducer = (state = creatures, action) => {
   switch (action.type) {
     default:
@@ -38,8 +41,19 @@ const reducer = combineReducers({
 const store = createStore(
   reducer
 );
+ */
+
+
+const store = createStore(reducer, compose(
+  applyMiddleware(thunk),
+  window.devToolsExtension ? window.devToolsExtension() : f => f
+));
+
+store.dispatch(getCreatures());
 
 ReactDOM.render(
-  <App store={ store } />,
+  <Provider store={ store }>
+    <App store={ store } />
+  </Provider>,
   document.getElementById('root')
 );

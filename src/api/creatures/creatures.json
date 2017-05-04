@@ -1,0 +1,53 @@
+{
+  "count": 2,
+  "next": null,
+  "previous": null,
+  "results": [
+    {
+      "id": 1,
+      "rank": 1,
+      "max_rank": 1,
+      "enabled": true,
+      "element_type": "fire",
+      "combat_type": "attacker",
+      "name": "Crossbowman Gnoll",
+      "skills": [
+        "https://s3.amazonaws.com/mmegapi/skills/1.json",
+        "https://s3.amazonaws.com/mmegapi/skills/2.json",
+        "https://s3.amazonaws.com/mmegapi/skills/3.json"
+      ],
+      "evolution": 99,
+      "health": 1197,
+      "attack": 215,
+      "defense": 60,
+      "speed": 69,
+      "crit": 5,
+      "crit_damage": 150,
+      "accuracy": 0,
+      "resistance": 10
+    },
+    {
+      "id": 2,
+      "rank": 1,
+      "max_rank": 1,
+      "enabled": true,
+      "element_type": "fire",
+      "combat_type": "defender",
+      "name": "Gnoll Warrior",
+      "skills":  [
+        "https://s3.amazonaws.com/mmegapi/skills/1.json",
+        "https://s3.amazonaws.com/mmegapi/skills/4.json",
+        "https://s3.amazonaws.com/mmegapi/skills/5.json"
+      ],
+      "evolution": 99,
+      "health": 1130,
+      "attack": 234,
+      "defense": 62,
+      "speed": 65,
+      "crit": 5,
+      "crit_damage": 150,
+      "accuracy": 0,
+      "resistance": 10
+    }
+  ]
+}

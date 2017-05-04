@@ -3,33 +3,31 @@
  */
 import React from 'react';
 import { connect } from 'react-redux';
+import {
+  setCurrentCreature,
+  getCreatureProfile,
+} from '../reducers/creature/actions';
 
-const Creature = ({ match, creatures = {} }) => (
+const Creature = ({ match, profile }) => (
   <div>
     <div className="container">
       <div className="row">
         <div className="col-xs-12">
           <div>
-            {
-              creatures.reduce((creature, i) => {
-                return <div key={ i }>
-                  <p>Name: { creature.name }</p>
-                  <p>Rank: { creature.rank } of possible { creature.max_rank }</p>
-                  <p>element_type: { creature.element_type }</p>
-                  <p>combat_type: { creature.combat_type }</p>
-                  <p>skills: { creature.skills }</p>
-                  <p>evolution: { creature.evolution }</p>
-                  <p>health: { creature.health }</p>
-                  <p>attack: { creature.attack }</p>
-                  <p>defense: { creature.defense }</p>
-                  <p>speed: { creature.speed }</p>
-                  <p>crit: { creature.crit }</p>
-                  <p>crit_damage: { creature.crit_damage }</p>
-                  <p>accuracy: { creature.accuracy }</p>
-                  <p>resistance: { creature.resistance }</p>
-                </div>
-              })
-            }
+            <p>Name: { profile.name }</p>
+            <p>Rank: { profile.rank } of possible { profile.max_rank }</p>
+            <p>element_type: { profile.element_type }</p>
+            <p>combat_type: { profile.combat_type }</p>
+            <p>skills: { profile.skills }</p>
+            <p>evolution: { profile.evolution }</p>
+            <p>health: { profile.health }</p>
+            <p>attack: { profile.attack }</p>
+            <p>defense: { profile.defense }</p>
+            <p>speed: { profile.speed }</p>
+            <p>crit: { profile.crit }</p>
+            <p>crit_damage: { profile.crit_damage }</p>
+            <p>accuracy: { profile.accuracy }</p>
+            <p>resistance: { profile.resistance }</p>
           </div>
         </div>
       </div>
@@ -37,12 +35,10 @@ const Creature = ({ match, creatures = {} }) => (
   </div>
 );
 
-const mapStateToProps = ({ creatures }) => ({
-  creatures
+const mapStateToProps = ({ creature: { profile } }) => ({
+  profile
 });
 
-const mapDispatchToProps = (dispatch) => ({
 
-});
+export default connect(mapStateToProps)(Creature);
 
-export default connect(mapStateToProps, mapDispatchToProps)(Creature);

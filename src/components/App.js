@@ -8,7 +8,7 @@ import {
   Route,
   Link
 } from 'react-router-dom';
-import { Navbar, Nav } from 'react-bootstrap';
+import { Navbar } from 'react-bootstrap';
 
 /**
  * Components
@@ -34,7 +34,6 @@ import { READ, UNREAD } from '../constants/index'
  */
 
 
-
 const App = ({ store = () => {} }) =>
   <Provider store={ store }>
     <div>
@@ -48,19 +47,18 @@ const App = ({ store = () => {} }) =>
               <Navbar.Toggle />
             </Navbar.Header>
             <Navbar.Collapse>
-              <Nav>
+              <ul className="nav navbar-nav">
                 <li><Link to="/"><span className="glyphicon glyphicon-home" aria-hidden="true" /> Home</Link></li>
-                <li role="presentation"><Link to="/creatures"><span className="glyphicon glyphicon-th" aria-hidden="true" /> Creatures</Link></li>
-                <li role="presentation"><Link to="/skills"><span className="glyphicon glyphicon-th-list" aria-hidden="true" /> Skills</Link></li>
-              </Nav>
+                <li><Link to="/creatures"><span className="glyphicon glyphicon-th" aria-hidden="true" /> Creatures</Link></li>
+                <li><Link to="/skills"><span className="glyphicon glyphicon-th-list" aria-hidden="true" /> Skills</Link></li>
+              </ul>
               <CreatureSearchForm />
             </Navbar.Collapse>
           </Navbar>
           <Route exact path="/" component={ Home } />
           <Route exact path="/creatures" component={ Creatures } />
-          { /* <Route path="/creatures/:id" component={ CreatureView } />*/ }
-          <Route exact path="/skills" component={ Skills } />
           <Route path="/creatures/:id" component={ Creature } />
+          <Route exact path="/skills" component={ Skills } />
         </div>
       </Router>
     </div>
@@ -73,10 +71,5 @@ const mapStateToProps = (state) => ({
   skills: state.skills
 });
 
-const mapDispatchToProps = (dispatch) => ({
-  markPostAsRead: () => dispatch({ type: READ }),
-  markPostAsUnread: () => dispatch({ type: UNREAD })
-});
-
-export default connect(mapStateToProps, mapDispatchToProps)(App);
+export default connect(mapStateToProps)(App);
 

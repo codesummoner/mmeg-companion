@@ -3,41 +3,25 @@
  */
 import React from 'react';
 import { connect } from 'react-redux';
-
-/**
- * Components
- */
+import {
+  setCurrentCreature,
+  getCreatureProfile,
+} from '../reducers/creature/actions';
 import { Link } from 'react-router-dom';
 
-/**
- * CSS
- */
 
-/**
- * Actions
- */
-
-/**
- * Constants
- */
-import { READ, UNREAD } from '../constants/index'
-
-const ListCreatures = ({ creatures = () => {} }) => {
-  return <ul>
-    { creatures.map((creature, i) =>
-      <li key={ i }>
-        <Link to={`/creatures/${creature.id}`}>{creature.name}</Link>
-      </li>
-    ) }
-  </ul>;
-};
-
-const Creatures = ({ creatures = {} }) => (
+const Creatures = ({ creatures, setCreature }) => (
   <div>
     <div className="container">
       <div className="row">
         <div className="col-xs-12">
-          <ListCreatures creatures={ creatures } />
+          <ul>
+            { creatures.map((creature, i) =>
+              <li key={ i }>
+                <Link to={`/creatures/${creature.id}`} onClick={ setCreature(i + 1) } >{creature.name}</Link>
+              </li>
+            ) }
+          </ul>
         </div>
       </div>
     </div>
@@ -45,12 +29,16 @@ const Creatures = ({ creatures = {} }) => (
 );
 
 const mapStateToProps = ({ creatures }) => ({
-  creatures
+  creatures,
 });
 
-const mapDispatchToProps = (dispatch) => ({
-  markPostAsRead: () => dispatch({ type: READ }),
-  markPostAsUnread: () => dispatch({ type: UNREAD })
+const mapDispatchToProps = dispatch => ({
+  setCreature(id) {
+    return () => {
+      dispatch(setCurrentCreature(id));
+      dispatch(getCreatureProfile(id));
+    };
+  },
 });
 
 export default connect(mapStateToProps, mapDispatchToProps)(Creatures);
