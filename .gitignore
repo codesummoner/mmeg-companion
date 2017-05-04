@@ -1,13 +1,10 @@
 ## JetBrains
 .idea
-.sass-cache
 
 ## Node.js
 lib-cov
 *.seed
-*.log
 *.csv
-*.dat
 *.out
 *.pid
 *.gz
