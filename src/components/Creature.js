@@ -31,7 +31,7 @@ const Ranking = ({ rank, maxRank }) =>
   <div className="row ranking">
     <div className="col-xs-12">
       <span className="glyphicon glyphicon-star"></span>
-    </div>;
+    </div>
   </div>;
 
 const Creature = ({ profile, skills }) => {
