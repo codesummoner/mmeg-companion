@@ -10,37 +10,59 @@ import { connect } from 'react-redux';
 
 */
 
+const CreaturePortrait = ({ src, altText, cssClasses }) =>
+  <div className="row">
+    <div className="col-xs-4">
+      <img src={ src } alt={ altText } className={ cssClasses } />
+    </div>
+    <div className="col-xs-8">
+      <p className="title">{ altText }</p>
+    </div>
+  </div>;
 
-const Creature = ({ profile }) => {
-  return <div>
-    <div className="container">
+const CreaturePhoto = ({ src, altText, cssClasses }) =>
+  <div className="row">
+    <div className="col-xs-12">
+      <img src={ src } alt={ altText } className={ cssClasses } />
+    </div>
+  </div>;
+
+const Ranking = ({ rank, maxRank }) =>
+  <div className="row ranking">
+    <div className="col-xs-12">
+      <span className="glyphicon glyphicon-star"></span>
+    </div>;
+  </div>;
+
+const Creature = ({ profile, skills }) => {
+  return <div className="container creature">
+      <CreaturePortrait src={ profile.portrait } altText={ profile.name } cssClasses="portrait"/>
+      <Ranking rank={ profile.rank } maxRank={ profile.max_rank } />
       <div className="row">
         <div className="col-xs-12">
-          <div>
-            <p>Name: { profile.name  }</p>
-            {
-              /*
-               <p>Name: { profile.name  }</p>
-               <p>Rank: { profile.rank } of possible { profile.max_rank }</p>
-               <p>element_type: { profile.element_type }</p>
-               <p>combat_type: { profile.combat_type }</p>
-               <p>skills: { profile.skills }</p>
-               <p>evolution: { profile.evolution }</p>
-               <p>health: { profile.health }</p>
-               <p>attack: { profile.attack }</p>
-               <p>defense: { profile.defense }</p>
-               <p>speed: { profile.speed }</p>
-               <p>crit: { profile.crit }</p>
-               <p>crit_damage: { profile.crit_damage }</p>
-               <p>accuracy: { profile.accuracy }</p>
-               <p>resistance: { profile.resistance }</p>
-              */
-            }
-          </div>
+          <p>Elemental Type: { profile.element_type }</p>
+          <p>Combat Type: { profile.combat_type }</p>
+          <p>Skills:</p>
+          <ul>
+            { skills.map((skill, i) =>
+              <li key={ i }>
+                {skill.name}
+              </li>
+            ) }
+          </ul>
+          <p>Evolves into: { profile.evolution }</p>
+          <p>Health: { profile.health }</p>
+          <p>Attack: { profile.attack }</p>
+          <p>Defense: { profile.defense }</p>
+          <p>Speed: { profile.speed }</p>
+          <p>Crital Chance: { profile.crit }</p>
+          <p>Critical Damage: { profile.crit_damage }</p>
+          <p>Accuracy: { profile.accuracy }</p>
+          <p>Resistance: { profile.resistance }</p>
         </div>
       </div>
+      <CreaturePhoto src={ profile.photo } altText={ profile.name } cssClasses="photo img-fluid" />
     </div>
-  </div>
 };
 
 /*

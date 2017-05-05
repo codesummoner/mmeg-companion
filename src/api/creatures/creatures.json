@@ -11,6 +11,8 @@
       "element_type": "fire",
       "combat_type": "attacker",
       "name": "Crossbowman Gnoll",
+      "portrait": "https://s3.amazonaws.com/mmegapi/creature-portraits/1.png",
+      "photo": "https://s3.amazonaws.com/mmegapi/creature-photos/1.jpg",
       "skills": [
         "https://s3.amazonaws.com/mmegapi/skills/1.json",
         "https://s3.amazonaws.com/mmegapi/skills/2.json",
@@ -34,6 +36,8 @@
       "element_type": "fire",
       "combat_type": "defender",
       "name": "Gnoll Warrior",
+      "portrait": "https://s3.amazonaws.com/mmegapi/creature-portraits/2.png",
+      "photo": "https://s3.amazonaws.com/mmegapi/creature-photos/2.jpg",
       "skills":  [
         "https://s3.amazonaws.com/mmegapi/skills/1.json",
         "https://s3.amazonaws.com/mmegapi/skills/4.json",
