@@ -19,8 +19,6 @@ export function setCreatureProfile(profile) {
 }
 
 export function getCreatureProfile(id) {
-  console.log('getCreatureProfile(id)',id);
-  console.log(`${API_URL}/creatures/${id}.json`);
   return dispatch =>
     fetch(`${API_URL}/creatures/${id}.json`)
       .then(res => res.json())

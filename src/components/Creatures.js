@@ -14,7 +14,7 @@ const Creatures = ({ creatures, setCreature }) => (
           <ul>
             { creatures.map((creature, i) =>
               <li key={ i }>
-                <Link to={`/creatures/${creature.id}`} onClick={ setCreature(i + 1) }>{creature.name}</Link>
+                <Link to={`/creatures/${creature.id}`} onClick={ setCreature(i + 1) } key={ creature.id }>{creature.name}</Link>
               </li>
             ) }
           </ul>
