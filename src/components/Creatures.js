@@ -1,14 +1,10 @@
-/**
- * Libs
- */
 import React from 'react';
 import { connect } from 'react-redux';
+import { Link } from 'react-router-dom';
 import {
   setCurrentCreature,
   getCreatureProfile,
 } from '../reducers/creature/actions';
-import { Link } from 'react-router-dom';
-
 
 const Creatures = ({ creatures, setCreature }) => (
   <div>
@@ -18,7 +14,7 @@ const Creatures = ({ creatures, setCreature }) => (
           <ul>
             { creatures.map((creature, i) =>
               <li key={ i }>
-                <Link to={`/creatures/${creature.id}`} onClick={ setCreature(i + 1) } >{creature.name}</Link>
+                <Link to={`/creatures/${creature.id}`} onClick={ setCreature(i + 1) }>{creature.name}</Link>
               </li>
             ) }
           </ul>

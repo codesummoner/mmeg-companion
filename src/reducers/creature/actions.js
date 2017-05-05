@@ -2,7 +2,6 @@ import { API_URL } from '../../constants/index';
 
 export const SET_CURRENT_CREATURE = 'SET_CURRENT_CREATURE';
 export const SET_CREATURE_PROFILE = 'SET_CREATURE_PROFILE';
-//export const SET_CREATURE_WORLD = 'SET_CREATURE_WORLD';
 export const SET_CREATURE_SKILLS = 'SET_CREATURE_SKILLS';
 
 export function setCurrentCreature(id) {
@@ -20,33 +19,16 @@ export function setCreatureProfile(profile) {
 }
 
 export function getCreatureProfile(id) {
+  console.log('getCreatureProfile(id)',id);
+  console.log(`${API_URL}/creatures/${id}.json`);
   return dispatch =>
     fetch(`${API_URL}/creatures/${id}.json`)
       .then(res => res.json())
       .then(profile => {
         dispatch(setCreatureProfile(profile));
-        //dispatch(getCreatureWorld(profile.homeworld));
         dispatch(getCreatureSkills(profile.skills));
       });
 }
-
-/*
-export function setCreatureWorld(world) {
-  return {
-    type: SET_CREATURE_WORLD,
-    world,
-  };
-}
-
-export function getCreatureWorld(url) {
-  return dispatch =>
-    fetch(url)
-      .then(res => res.json())
-      .then(world =>
-        dispatch(setCreatureWorld(world))
-      );
-}
- */
 
 export function setCreatureSkills(skills) {
   return {

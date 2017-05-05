@@ -19,31 +19,6 @@ import { getCreatures } from './reducers/creatures/actions';
 
 import App from './components/App';
 
-/*
-const creaturesReducer = (state = creatures, action) => {
-  switch (action.type) {
-    default:
-      return state;
-  }
-};
-const skillsReducer = (state = skills, action) => {
-  switch (action.type) {
-    default:
-      return state;
-  }
-};
-
-const reducer = combineReducers({
-  creatures: creaturesReducer,
-  skills: skillsReducer
-});
-
-const store = createStore(
-  reducer
-);
- */
-
-
 const store = createStore(reducer, compose(
   applyMiddleware(thunk),
   window.devToolsExtension ? window.devToolsExtension() : f => f

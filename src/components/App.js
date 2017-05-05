@@ -1,6 +1,3 @@
-/**
- * Libs
- */
 import React from 'react';
 import { Provider, connect } from 'react-redux';
 import {
@@ -10,31 +7,15 @@ import {
 } from 'react-router-dom';
 import { Navbar } from 'react-bootstrap';
 
-/**
- * Components
- */
 import Home from './Home';
 import Creatures from './Creatures';
 import Creature from './Creature';
 import Skills from './Skills';
 import CreatureSearchForm from './CreatureSearchForm';
 
-/**
- * CSS
- */
 import './App.css';
 
-/**
- * Constants
- */
-import { READ, UNREAD } from '../constants/index'
-
-/**
- * Parent Component
- */
-
-
-const App = ({ store = () => {} }) =>
+const App = ({ store = () => {}, setCreature }) =>
   <Provider store={ store }>
     <div>
       <Router>

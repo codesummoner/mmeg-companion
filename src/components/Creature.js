@@ -1,20 +1,16 @@
-/**
- * Libs
- */
 import React from 'react';
 import { connect } from 'react-redux';
-import {
-  setCurrentCreature,
-  getCreatureProfile,
-} from '../reducers/creature/actions';
 
-const Creature = ({ match, profile }) => (
-  <div>
+const Creature = ({ match, profile, skills }) => {
+  //console.log(setCharacter(match.params.id));
+  //console.log('match', match);
+  //console.log('profile', profile);
+  return <div>
     <div className="container">
       <div className="row">
         <div className="col-xs-12">
           <div>
-            <p>Name: { profile.name }</p>
+            <p>Name: { profile.name  }</p>
             <p>Rank: { profile.rank } of possible { profile.max_rank }</p>
             <p>element_type: { profile.element_type }</p>
             <p>combat_type: { profile.combat_type }</p>
@@ -33,12 +29,11 @@ const Creature = ({ match, profile }) => (
       </div>
     </div>
   </div>
-);
+};
 
-const mapStateToProps = ({ creature: { profile } }) => ({
-  profile
+const mapStateToProps = ({ creature: { profile, skills } }) => ({
+  profile,
+  skills,
 });
 
-
 export default connect(mapStateToProps)(Creature);
-
