@@ -1,21 +1,12 @@
 import React from 'react';
 import { connect } from 'react-redux';
-/*
 
- import { createStore, applyMiddleware, compose } from 'redux';
- import thunk from 'redux-thunk';
- import reducer from '../reducers';
- //import { getCreatures } from '../reducers/creatures/actions';
- import { getCreatureProfile } from '../reducers/creature/actions';
-
-*/
+import './Creature.css';
 
 const CreaturePortrait = ({ src, altText, cssClasses }) =>
   <div className="row">
-    <div className="col-xs-4">
+    <div className="col-xs-12 flex-align-center">
       <img src={ src } alt={ altText } className={ cssClasses } />
-    </div>
-    <div className="col-xs-8">
       <p className="title">{ altText }</p>
     </div>
   </div>;
@@ -64,14 +55,6 @@ const Creature = ({ profile, skills }) => {
       <CreaturePhoto src={ profile.photo } altText={ profile.name } cssClasses="photo img-fluid" />
     </div>
 };
-
-/*
-const store = createStore(reducer, compose(
-  applyMiddleware(thunk)
-));
-
-store.dispatch(getCreatureProfile(2));
-*/
 
 const mapStateToProps = ({ creature: { profile, skills } }) => ({
   profile,

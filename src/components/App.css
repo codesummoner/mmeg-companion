@@ -1,7 +1,10 @@
+html, body {
+  font-size: 16px;
+}
+
 body {
   background-color: #221d1f;
   color: #fff;
-  font-size: 16px;
 }
 
 a {
@@ -30,11 +33,6 @@ a {
   background-color: #000;
 }
 
-.creature .portrait {
-  display: inline;
-  width: 100px;
-  height: 100px;
-}
 .img-fluid {
   width: 100%;
   height: auto;
@@ -45,7 +43,7 @@ a {
   opacity: 0.3;
 }
 
-.creature .title {
-  font-size: 2rem;
-  color: #f8bf34;
+.flex-align-center {
+  display: flex;
+  align-items: center !important;
 }

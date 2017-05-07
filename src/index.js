@@ -26,10 +26,10 @@ const store = createStore(reducer, compose(
 
 store.dispatch(getCreatures());
 
-if (window.location.pathname.match(/creatures/)) {
+if (window.location.pathname !== '/creatures' && window.location.pathname.match(/creatures/)) {
   let id = window.location.pathname;
   id = id.replace('/creatures/','');
-  if (isNaN(parseInt(id,10))) {
+  if (id !== '/creatures' && isNaN(parseInt(id,10))) {
     console.log('404');
   } else {
     store.dispatch(getCreatureProfile(id));

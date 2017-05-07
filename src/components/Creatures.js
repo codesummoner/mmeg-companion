@@ -6,18 +6,88 @@ import {
   getCreatureProfile,
 } from '../reducers/creature/actions';
 
-const Creatures = ({ creatures, setCreature }) => (
+import './Creatures.css';
+
+const CreatureMiniPortrait = ({ src, altText, cssClasses }) =>
   <div>
-    <div className="container">
-      <div className="row">
-        <div className="col-xs-12">
-          <ul>
-            { creatures.map((creature, i) =>
-              <li key={ i }>
-                <Link to={`/creatures/${creature.id}`} onClick={ setCreature(i + 1) } key={ creature.id }>{creature.name}</Link>
-              </li>
-            ) }
-          </ul>
+    <img src={ src } alt={ altText } className={ cssClasses } />
+  </div>;
+
+const Creatures = ({ creatures, setCreature }) => (
+  <div className="container">
+    <div className="row">
+      <div className="col-xs-12">
+        <h3>FIRE</h3>
+        <div className="creatures fire">
+          {
+            creatures.map((profile, i) => {
+              if (profile.element_type === 'fire') {
+                console.log(profile.id);
+                return <Link to={`/creatures/${profile.id}`} onClick={ setCreature(i + 1) } key={ profile.id } className="pull-left">
+                  <CreatureMiniPortrait src={ profile.portrait } altText={ profile.name } cssClasses="portrait"/>
+                </Link>
+              } else {
+                return '';
+              }
+            })
+          }
+        </div>
+      </div>
+    </div>
+    <div className="row">
+      <div className="col-xs-12">
+        <h3>AIR</h3>
+        <div className="creatures air">
+          {
+            creatures.map((profile, i) => {
+              if (profile.element_type === 'air') {
+                console.log(profile.id);
+                return <Link to={`/creatures/${profile.id}`} onClick={ setCreature(i + 1) } key={ profile.id } className="pull-left">
+                  <CreatureMiniPortrait src={ profile.portrait } altText={ profile.name } cssClasses="portrait"/>
+                </Link>
+              } else {
+                return '';
+              }
+            })
+          }
+        </div>
+      </div>
+    </div>
+    <div className="row">
+      <div className="col-xs-12">
+        <h3>EARTH</h3>
+        <div className="creatures earth">
+          {
+            creatures.map((profile, i) => {
+              if (profile.element_type === 'earth') {
+                console.log(profile.id);
+                return <Link to={`/creatures/${profile.id}`} onClick={ setCreature(i + 1) } key={ profile.id } className="pull-left">
+                  <CreatureMiniPortrait src={ profile.portrait } altText={ profile.name } cssClasses="portrait"/>
+                </Link>
+              } else {
+                return '';
+              }
+            })
+          }
+        </div>
+      </div>
+    </div>
+    <div className="row">
+      <div className="col-xs-12">
+        <h3>WATER</h3>
+        <div className="creatures water">
+          {
+            creatures.map((profile, i) => {
+              if (profile.element_type === 'water') {
+                console.log(profile.id);
+                return <Link to={`/creatures/${profile.id}`} onClick={ setCreature(i + 1) } key={ profile.id } className="pull-left">
+                  <CreatureMiniPortrait src={ profile.portrait } altText={ profile.name } cssClasses="portrait"/>
+                </Link>
+              } else {
+                return '';
+              }
+            })
+          }
         </div>
       </div>
     </div>
