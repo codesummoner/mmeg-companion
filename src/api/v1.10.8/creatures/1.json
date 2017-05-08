@@ -1,18 +1,10 @@
 {
   "id": 1,
+  "name": "Crossbowman Gnoll",
   "rank": 1,
-  "max_rank": 1,
-  "enabled": true,
   "element_type": "fire",
   "combat_type": "attacker",
-  "name": "Crossbowman Gnoll",
-  "portrait": "/creature-portraits/1.png",
-  "photo": "/creature-photos/1.jpg",
-  "skills": [
-    "/skills/1.json",
-    "/skills/2.json",
-    "/skills/3.json"
-  ],
+  "skills": [1,2,3],
   "evolution": 99,
   "health": 1197,
   "attack": 215,
@@ -21,5 +13,7 @@
   "crit": 5,
   "crit_damage": 150,
   "accuracy": 0,
-  "resistance": 10
+  "resistance": 10,
+  "found_in": "",
+  "enabled": true
 }

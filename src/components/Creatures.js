@@ -5,7 +5,7 @@ import {
   setCurrentCreature,
   getCreatureProfile,
 } from '../reducers/creature/actions';
-import { API_URL } from '../constants';
+import { API_URL, API_PORTRAIT_PATH, API_PORTRAIT_FILE_EXT } from '../constants';
 
 import './Creatures.css';
 
@@ -25,7 +25,7 @@ const Creatures = ({ creatures, setCreature }) => (
               if (profile.element_type === 'fire') {
                 console.log(profile.id);
                 return <Link to={`/creatures/${profile.id}`} onClick={ setCreature(i + 1) } key={ profile.id } className="pull-left">
-                  <CreatureMiniPortrait src={ API_URL + profile.portrait } altText={ profile.name } cssClasses="portrait"/>
+                  <CreatureMiniPortrait src={ API_URL + API_PORTRAIT_PATH + profile.id + API_PORTRAIT_FILE_EXT } altText={ profile.name } cssClasses="portrait"/>
                 </Link>
               } else {
                 return '';
@@ -44,7 +44,7 @@ const Creatures = ({ creatures, setCreature }) => (
               if (profile.element_type === 'air') {
                 console.log(profile.id);
                 return <Link to={`/creatures/${profile.id}`} onClick={ setCreature(i + 1) } key={ profile.id } className="pull-left">
-                  <CreatureMiniPortrait src={ API_URL + profile.portrait } altText={ profile.name } cssClasses="portrait"/>
+                  <CreatureMiniPortrait src={ API_URL + API_PORTRAIT_PATH + profile.id + API_PORTRAIT_FILE_EXT } altText={ profile.name } cssClasses="portrait"/>
                 </Link>
               } else {
                 return '';
@@ -63,7 +63,7 @@ const Creatures = ({ creatures, setCreature }) => (
               if (profile.element_type === 'earth') {
                 console.log(profile.id);
                 return <Link to={`/creatures/${profile.id}`} onClick={ setCreature(i + 1) } key={ profile.id } className="pull-left">
-                  <CreatureMiniPortrait src={ API_URL + profile.portrait } altText={ profile.name } cssClasses="portrait"/>
+                  <CreatureMiniPortrait src={ API_URL + API_PORTRAIT_PATH + profile.id + API_PORTRAIT_FILE_EXT } altText={ profile.name } cssClasses="portrait"/>
                 </Link>
               } else {
                 return '';
@@ -82,7 +82,7 @@ const Creatures = ({ creatures, setCreature }) => (
               if (profile.element_type === 'water') {
                 console.log(profile.id);
                 return <Link to={`/creatures/${profile.id}`} onClick={ setCreature(i + 1) } key={ profile.id } className="pull-left">
-                  <CreatureMiniPortrait src={ API_URL + profile.portrait } altText={ profile.name } cssClasses="portrait"/>
+                  <CreatureMiniPortrait src={ API_URL + API_PORTRAIT_PATH + profile.id + API_PORTRAIT_FILE_EXT } altText={ profile.name } cssClasses="portrait"/>
                 </Link>
               } else {
                 return '';

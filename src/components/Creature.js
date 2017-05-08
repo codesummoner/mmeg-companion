@@ -1,6 +1,6 @@
 import React from 'react';
 import { connect } from 'react-redux';
-import { API_URL } from '../constants';
+import { API_URL, API_PORTRAIT_PATH, API_PORTRAIT_FILE_EXT, API_PHOTO_PATH, API_PHOTO_FILE_EXT } from '../constants';
 
 import './Creature.css';
 
@@ -28,7 +28,7 @@ const Ranking = ({ rank, maxRank }) =>
 
 const Creature = ({ profile, skills }) => {
   return <div className="container creature">
-      <CreaturePortrait src={ API_URL + profile.portrait } altText={ profile.name } cssClasses="portrait"/>
+      <CreaturePortrait src={ API_URL + API_PORTRAIT_PATH + profile.id + API_PORTRAIT_FILE_EXT } altText={ profile.name } cssClasses="portrait"/>
       <Ranking rank={ profile.rank } maxRank={ profile.max_rank } />
       <div className="row">
         <div className="col-xs-12">
@@ -53,7 +53,7 @@ const Creature = ({ profile, skills }) => {
           <p>Resistance: { profile.resistance }</p>
         </div>
       </div>
-      <CreaturePhoto src={ API_URL + profile.photo } altText={ profile.name } cssClasses="photo img-fluid" />
+      <CreaturePhoto src={ API_URL + API_PHOTO_PATH + profile.id + API_PHOTO_FILE_EXT } altText={ profile.name } cssClasses="photo img-fluid" />
     </div>
 };
 
