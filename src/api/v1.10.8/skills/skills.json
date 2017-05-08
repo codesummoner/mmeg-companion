@@ -32,6 +32,18 @@
       "name": "Provoke",
       "description": "Attacks an enemy. 15% chance of taunting them for 2 turns.",
       "cooldown": 6
+    },
+    {
+      "id": 6,
+      "name": "Dazing Shot",
+      "description": "Attacks an enemy. 20% chance of paralyzing them for 1 turn.",
+      "cooldown": 3
+    },
+    {
+      "id": 7,
+      "name": "Quick Draw",
+      "description": "Attacks an enemy. 25% chance of attacking them two extra times.",
+      "cooldown": 5
     }
   ]
 }
