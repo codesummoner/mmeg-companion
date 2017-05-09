@@ -10,6 +10,7 @@ import Home from './Home';
 import Creatures from './Creatures';
 import Creature from './Creature';
 import Skills from './Skills';
+import Report from './Report';
 import CreatureSearchForm from './CreatureSearchForm';
 
 import './App.css';
@@ -38,6 +39,7 @@ const App = () =>
         <Route exact path="/creatures" component={ Creatures } />
         <Route path="/creatures/:id" component={ Creature } />
         <Route exact path="/skills" component={ Skills } />
+        <Route path="/report/:id" component={ Report } />
       </div>
     </Router>
   </div>;

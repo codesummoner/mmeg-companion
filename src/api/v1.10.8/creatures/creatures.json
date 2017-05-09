@@ -10,7 +10,7 @@
       "element_type": "fire",
       "combat_type": "attacker",
       "skills": [1,2,3],
-      "evolution": 99,
+      "evolution": 2,
       "rank1_base_health": 1197,
       "rank1_max_health": 0,
       "rank2_base_health": 0,

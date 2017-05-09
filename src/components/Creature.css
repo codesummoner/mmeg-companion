@@ -5,6 +5,12 @@
   margin: 0 1rem 0 0;
 }
 
+.creature .mini {
+  width: 2rem;
+  height: 2rem;
+  display: inline;
+}
+
 .creature .title {
   font-size: 1.3rem;
   color: #f8bf34;
