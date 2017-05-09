@@ -16,7 +16,6 @@ import { createStore, applyMiddleware, compose } from 'redux';
 import thunk from 'redux-thunk';
 import reducer from './reducers';
 import { getCreatures } from './reducers/creatures/actions';
-import { getCreatureProfile } from './reducers/creature/actions';
 
 import App from './components/App';
 
@@ -25,16 +24,6 @@ const store = createStore(reducer, compose(
 ));
 
 store.dispatch(getCreatures());
-
-if (window.location.pathname !== '/creatures' && window.location.pathname.match(/creatures/)) {
-  let id = window.location.pathname;
-  id = id.replace('/creatures/','');
-  if (id !== '/creatures' && isNaN(parseInt(id,10))) {
-    console.log('404');
-  } else {
-    store.dispatch(getCreatureProfile(id));
-  }
-}
 
 ReactDOM.render(
   <Provider store={ store }>

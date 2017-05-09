@@ -5,6 +5,7 @@ export const SET_CREATURE_PROFILE = 'SET_CREATURE_PROFILE';
 export const SET_CREATURE_SKILLS = 'SET_CREATURE_SKILLS';
 
 export function setCurrentCreature(id) {
+  console.log('set',id);
   return {
     type: SET_CURRENT_CREATURE,
     id,
