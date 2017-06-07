@@ -107,6 +107,9 @@ const Creature = ({ creatures, skills, match }) => {
             <li><Link to="">World-Tree Mountain - Nightmare - 7</Link></li>
           </ul>
         </p>
+        <p>Lore:<br />
+          Lorem ipsum
+        </p>
         <div className="table-responsive">
           <table className="table">
             <thead>
