@@ -100,16 +100,6 @@ const Creature = ({ creatures, skills, match }) => {
           ) }
         </ul>
         <p>Evolves into: <EvolvesInto creatureId={ profile.evolution } creatures={ creatures } /></p>
-        <p>Can be killed the following levels:
-          <ul>
-            <li><Link to="">Mystical Forest - Normal - 6</Link></li>
-            <li><Link to="">Volcano - Advanced - 3</Link></li>
-            <li><Link to="">World-Tree Mountain - Nightmare - 7</Link></li>
-          </ul>
-        </p>
-        <p>Lore:<br />
-          Lorem ipsum
-        </p>
         <div className="table-responsive">
           <table className="table">
             <thead>
@@ -141,6 +131,19 @@ const Creature = ({ creatures, skills, match }) => {
         <p>Critical Damage: { profile.rank1_base_crit_damage }</p>
         <p>Accuracy: { profile.rank1_base_accuracy }</p>
         <p>Resistance: { profile.rank1_base_resistance }</p>
+        <p>Can be killed the following levels:
+          <ul>
+            <li><Link to="">Mystical Forest - Normal - 6</Link></li>
+            <li><Link to="">Volcano - Advanced - 3</Link></li>
+            <li><Link to="">World-Tree Mountain - Nightmare - 7</Link></li>
+          </ul>
+        </p>
+        <p>
+          Lore: Inhabitating most of the forests of Ashan, wolves usually stay away from people.
+          But they have been known to attack lonely travelers, especially during harsh winters when game becomes scarce.
+          Wolves howl at the moon, and are thus often believed to be servants of Asha in folklore and legends.
+          Silverbacks are the leaders of the pack. When unleashed on their preys, they do not stop until they have closed their jaws on the enemy’s flesh.
+        </p>
       </div>
     </div>
     <CreaturePhoto src={ API_URL + API_PHOTO_PATH + profile.id + API_PHOTO_FILE_EXT } altText={ profile.name } cssClasses="photo img-fluid" />
