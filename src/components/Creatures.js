@@ -21,7 +21,8 @@ const Creatures = ({ creatures, setCreature }) => (
             creatures.map((profile, i) => {
               if (profile.element_type === 'fire') {
                 return <Link to={`/creatures/${profile.id}`} key={ profile.id } className="pull-left">
-                  <CreatureMiniPortrait src={ API_URL + API_PORTRAIT_PATH + profile.id + API_PORTRAIT_FILE_EXT } altText={ profile.name } cssClasses="portrait"/>
+                    { /* <CreatureMiniPortrait src={ API_URL + API_PORTRAIT_PATH + profile.id + API_PORTRAIT_FILE_EXT } altText={ profile.name } cssClasses="portrait"/> */ }
+                    { profile.name } &nbsp;
                 </Link>
               } else {
                 return '';
@@ -39,7 +40,8 @@ const Creatures = ({ creatures, setCreature }) => (
             creatures.map((profile, i) => {
               if (profile.element_type === 'water') {
                 return <Link to={`/creatures/${profile.id}`} key={ profile.id } className="pull-left">
-                  <CreatureMiniPortrait src={ API_URL + API_PORTRAIT_PATH + profile.id + API_PORTRAIT_FILE_EXT } altText={ profile.name } cssClasses="portrait"/>
+                  { /* <CreatureMiniPortrait src={ API_URL + API_PORTRAIT_PATH + profile.id + API_PORTRAIT_FILE_EXT } altText={ profile.name } cssClasses="portrait"/> */ }
+                  { profile.name } &nbsp;
                 </Link>
               } else {
                 return '';
@@ -57,7 +59,8 @@ const Creatures = ({ creatures, setCreature }) => (
             creatures.map((profile, i) => {
               if (profile.element_type === 'earth') {
                 return <Link to={`/creatures/${profile.id}`} key={ profile.id } className="pull-left">
-                  <CreatureMiniPortrait src={ API_URL + API_PORTRAIT_PATH + profile.id + API_PORTRAIT_FILE_EXT } altText={ profile.name } cssClasses="portrait"/>
+                  { /* <CreatureMiniPortrait src={ API_URL + API_PORTRAIT_PATH + profile.id + API_PORTRAIT_FILE_EXT } altText={ profile.name } cssClasses="portrait"/> */ }
+                  { profile.name } &nbsp;
                 </Link>
               } else {
                 return '';
@@ -75,7 +78,8 @@ const Creatures = ({ creatures, setCreature }) => (
             creatures.map((profile, i) => {
               if (profile.element_type === 'air') {
                 return <Link to={`/creatures/${profile.id}`} key={ profile.id } className="pull-left">
-                  <CreatureMiniPortrait src={ API_URL + API_PORTRAIT_PATH + profile.id + API_PORTRAIT_FILE_EXT } altText={ profile.name } cssClasses="portrait"/>
+                  { /* <CreatureMiniPortrait src={ API_URL + API_PORTRAIT_PATH + profile.id + API_PORTRAIT_FILE_EXT } altText={ profile.name } cssClasses="portrait"/> */ }
+                  { profile.name } &nbsp;
                 </Link>
               } else {
                 return '';

@@ -1,6 +1,6 @@
 export const READ = 'READ';
 export const UNREAD = 'UNREAD';
-export const API_URL = 'https://s3.amazonaws.com/mmegapi/v1.11.21';
+export const API_URL = 'https://s3.amazonaws.com/mmegapi/1.21.11';
 export const API_PORTRAIT_PATH = '/creature-portraits/';
 export const API_PORTRAIT_FILE_EXT = '.jpg';
 export const API_PHOTO_PATH = '/creature-photos/';

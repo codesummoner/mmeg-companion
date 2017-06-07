@@ -1,0 +1,6 @@
+{
+  "id": 4,
+  "name": "Energy Hunter",
+  "description": "Drains HP from an enemy during 2 turns. Drain is 30% of own attack.",
+  "cooldown": 4
+}

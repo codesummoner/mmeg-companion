@@ -1,0 +1,6 @@
+{
+  "id": 1,
+  "name": "Attack",
+  "description": "Attacks an enemy",
+  "cooldown": 0
+}

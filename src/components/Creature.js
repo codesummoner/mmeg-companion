@@ -100,6 +100,13 @@ const Creature = ({ creatures, skills, match }) => {
           ) }
         </ul>
         <p>Evolves into: <EvolvesInto creatureId={ profile.evolution } creatures={ creatures } /></p>
+        <p>Can be killed the following levels:
+          <ul>
+            <li><Link to="">Mystical Forest - Normal - 6</Link></li>
+            <li><Link to="">Volcano - Advanced - 3</Link></li>
+            <li><Link to="">World-Tree Mountain - Nightmare - 7</Link></li>
+          </ul>
+        </p>
         <div className="table-responsive">
           <table className="table">
             <thead>

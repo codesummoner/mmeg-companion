@@ -1,6 +1,0 @@
-{
-  "id": 3,
-  "name": "Draining Shot",
-  "description": "Drains HP from all enemies. Drain is 25% of own attack.",
-  "cooldown": 5
-}
