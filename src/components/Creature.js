@@ -139,10 +139,7 @@ const Creature = ({ creatures, skills, match }) => {
           </ul>
         </p>
         <p>
-          Lore: Inhabitating most of the forests of Ashan, wolves usually stay away from people.
-          But they have been known to attack lonely travelers, especially during harsh winters when game becomes scarce.
-          Wolves howl at the moon, and are thus often believed to be servants of Asha in folklore and legends.
-          Silverbacks are the leaders of the pack. When unleashed on their preys, they do not stop until they have closed their jaws on the enemy’s flesh.
+          Lore: { profile.lore }
         </p>
       </div>
     </div>
