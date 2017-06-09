@@ -93,9 +93,9 @@ const Creature = ({ creatures, skills, match }) => {
       <div className="col-xs-12">
         <p>Skills:</p>
         <ul>
-          { skills.map((skill, i) =>
+          { profile.skills.map((skill, i) =>
             <li key={ i }>
-              { skill.name }
+              -{ skill }-
             </li>
           ) }
         </ul>
