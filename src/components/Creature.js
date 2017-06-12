@@ -71,12 +71,13 @@ const Creature = ({ creatures, skills, match }) => {
   let profile = 0;
   let id = parseInt(match.params.id,10);
   let creatureSkills = 0;
+  let levels = 0;
   creatures.map((profileitem) => {
     if (profileitem.id === id) {
       profile = profileitem;
       creatureSkills = profile.skills;
       creatureSkills = creatureSkills.map((cSkill, i) =>
-        <li key={ i }>{ cSkill }</li>
+        <li key={ i }><Link to={`/skills/${ cSkill }`}>Skill { cSkill }</Link></li>
       );
     }
     return true;
@@ -108,32 +109,54 @@ const Creature = ({ creatures, skills, match }) => {
             <thead>
             <tr>
               <th>&nbsp;</th>
-              <th>RANK 1</th>
-              <th>RANK 2</th>
-              <th>RANK 3</th>
-              <th>RANK 4</th>
-              <th>RANK 5</th>
+              <th>BASE</th>
+              <th>MAX</th>
             </tr>
             </thead>
             <tbody>
             <tr>
               <td>Health</td>
               <td>{ profile.rank1_base_health }</td>
-              <td>{ profile.rank2_base_health }</td>
-              <td>{ profile.rank3_base_health }</td>
-              <td>{ profile.rank4_base_health }</td>
               <td>{ profile.rank5_base_health }</td>
+            </tr>
+            <tr>
+              <td>Attack</td>
+              <td>{ profile.rank1_base_attack }</td>
+              <td>{ profile.rank5_base_attack }</td>
+            </tr>
+            <tr>
+              <td>Defense</td>
+              <td>{ profile.rank1_base_defense }</td>
+              <td>{ profile.rank5_base_defense }</td>
+            </tr>
+            <tr>
+              <td>Speed</td>
+              <td>{ profile.rank1_base_speed }</td>
+              <td>{ profile.rank5_base_speed }</td>
+            </tr>
+            <tr>
+              <td>Critical Chance</td>
+              <td>{ profile.rank1_base_crit }%</td>
+              <td>{ profile.rank5_base_crit }%</td>
+            </tr>
+            <tr>
+              <td>Critical Damage</td>
+              <td>{ profile.rank1_base_crit_damage }%</td>
+              <td>{ profile.rank5_base_crit_damage }%</td>
+            </tr>
+            <tr>
+              <td>Accuracy</td>
+              <td>{ profile.rank1_base_accuracy }%</td>
+              <td>{ profile.rank5_base_accuracy }%</td>
+            </tr>
+            <tr>
+              <td>Resistance</td>
+              <td>{ profile.rank1_base_resistance }%</td>
+              <td>{ profile.rank5_base_resistance }%</td>
             </tr>
             </tbody>
           </table>
         </div>
-        <p>Attack: { profile.rank1_base_attack }</p>
-        <p>Defense: { profile.rank1_base_defense }</p>
-        <p>Speed: { profile.rank1_base_speed }</p>
-        <p>Critical Chance: { profile.rank1_base_crit }</p>
-        <p>Critical Damage: { profile.rank1_base_crit_damage }</p>
-        <p>Accuracy: { profile.rank1_base_accuracy }</p>
-        <p>Resistance: { profile.rank1_base_resistance }</p>
         <p>Can be killed the following levels:</p>
         <ul>
           <li><Link to="">Mystical Forest - Normal - 6</Link></li>
@@ -145,7 +168,7 @@ const Creature = ({ creatures, skills, match }) => {
         </p>
       </div>
     </div>
-    <CreaturePhoto src={ API_URL + API_PHOTO_PATH + profile.id + API_PHOTO_FILE_EXT } altText={ profile.name } cssClasses="photo img-fluid" />
+    { /*<CreaturePhoto src={ API_URL + API_PHOTO_PATH + profile.id + API_PHOTO_FILE_EXT } altText={ profile.name } cssClasses="photo img-fluid" />*/ }
   </div>
 };
 
