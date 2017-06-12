@@ -21,7 +21,7 @@ const Creatures = ({ creatures, setCreature }) => (
           {
             creatures.map((profile, i) => {
               if (profile.element_type === 'fire') {
-                return <li><Link to={`/creatures/${profile.id}`} key={ profile.id } className="pull-left">
+                return <li key={ i }><Link to={`/creatures/${profile.id}`} key={ profile.id } className="pull-left">
                     { /* <CreatureMiniPortrait src={ API_URL + API_PORTRAIT_PATH + profile.id + API_PORTRAIT_FILE_EXT } altText={ profile.name } cssClasses="portrait"/> */ }
                     { profile.name }
                 </Link></li>
@@ -42,7 +42,7 @@ const Creatures = ({ creatures, setCreature }) => (
           {
             creatures.map((profile, i) => {
               if (profile.element_type === 'water') {
-                return <li><Link to={`/creatures/${profile.id}`} key={ profile.id } className="pull-left">
+                return <li key={ i }><Link to={`/creatures/${profile.id}`} key={ profile.id } className="pull-left">
                   { /* <CreatureMiniPortrait src={ API_URL + API_PORTRAIT_PATH + profile.id + API_PORTRAIT_FILE_EXT } altText={ profile.name } cssClasses="portrait"/> */ }
                   { profile.name }
                 </Link></li>
@@ -63,7 +63,7 @@ const Creatures = ({ creatures, setCreature }) => (
           {
             creatures.map((profile, i) => {
               if (profile.element_type === 'earth') {
-                return <li><Link to={`/creatures/${profile.id}`} key={ profile.id } className="pull-left">
+                return <li key={ i }><Link to={`/creatures/${profile.id}`} key={ profile.id } className="pull-left">
                   { /* <CreatureMiniPortrait src={ API_URL + API_PORTRAIT_PATH + profile.id + API_PORTRAIT_FILE_EXT } altText={ profile.name } cssClasses="portrait"/> */ }
                   { profile.name }
                 </Link></li>
@@ -84,7 +84,7 @@ const Creatures = ({ creatures, setCreature }) => (
           {
             creatures.map((profile, i) => {
               if (profile.element_type === 'air') {
-                return <li><Link to={`/creatures/${profile.id}`} key={ profile.id } className="pull-left">
+                return <li key={ i }><Link to={`/creatures/${profile.id}`} key={ profile.id } className="pull-left">
                   { /* <CreatureMiniPortrait src={ API_URL + API_PORTRAIT_PATH + profile.id + API_PORTRAIT_FILE_EXT } altText={ profile.name } cssClasses="portrait"/> */ }
                   { profile.name }
                 </Link></li>

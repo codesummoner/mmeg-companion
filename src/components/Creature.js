@@ -70,13 +70,14 @@ const CombatClassIcon = ({ combatClassName, className }) =>
 const Creature = ({ creatures, skills, match }) => {
   let profile = 0;
   let id = parseInt(match.params.id,10);
+  let creatureSkills = 0;
   creatures.map((profileitem) => {
     if (profileitem.id === id) {
       profile = profileitem;
+      creatureSkills = profile.skills;
     }
     return true;
   });
-
   return <div className="container creature">
     <ReportDataUI creatureId={ profile.id } />
     <CreaturePortrait src={ API_URL + API_PORTRAIT_PATH + profile.id + API_PORTRAIT_FILE_EXT } altText={ profile.name } cssClasses="portrait" />
@@ -93,11 +94,12 @@ const Creature = ({ creatures, skills, match }) => {
       <div className="col-xs-12">
         <p>Skills:</p>
         <ul>
-          { profile.skills.map((skill, i) =>
-            <li key={ i }>
-              -{ skill }-
-            </li>
-          ) }
+          {
+
+           creatureSkills.map((cSkill) =>
+              <li>{ cSkill }</li>
+           )
+          }
         </ul>
         <p>Evolves into: <EvolvesInto creatureId={ profile.evolution } creatures={ creatures } /></p>
         <div className="table-responsive">
@@ -131,13 +133,12 @@ const Creature = ({ creatures, skills, match }) => {
         <p>Critical Damage: { profile.rank1_base_crit_damage }</p>
         <p>Accuracy: { profile.rank1_base_accuracy }</p>
         <p>Resistance: { profile.rank1_base_resistance }</p>
-        <p>Can be killed the following levels:
-          <ul>
-            <li><Link to="">Mystical Forest - Normal - 6</Link></li>
-            <li><Link to="">Volcano - Advanced - 3</Link></li>
-            <li><Link to="">World-Tree Mountain - Nightmare - 7</Link></li>
-          </ul>
-        </p>
+        <p>Can be killed the following levels:</p>
+        <ul>
+          <li><Link to="">Mystical Forest - Normal - 6</Link></li>
+          <li><Link to="">Volcano - Advanced - 3</Link></li>
+          <li><Link to="">World-Tree Mountain - Nightmare - 7</Link></li>
+        </ul>
         <p>
           Lore: { profile.lore }
         </p>
