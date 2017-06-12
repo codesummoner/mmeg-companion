@@ -75,9 +75,15 @@ const Creature = ({ creatures, skills, match }) => {
     if (profileitem.id === id) {
       profile = profileitem;
       creatureSkills = profile.skills;
+      creatureSkills = creatureSkills.map((cSkill, i) =>
+        <li key={ i }>{ cSkill }</li>
+      );
     }
     return true;
   });
+
+
+
   return <div className="container creature">
     <ReportDataUI creatureId={ profile.id } />
     <CreaturePortrait src={ API_URL + API_PORTRAIT_PATH + profile.id + API_PORTRAIT_FILE_EXT } altText={ profile.name } cssClasses="portrait" />
@@ -94,12 +100,7 @@ const Creature = ({ creatures, skills, match }) => {
       <div className="col-xs-12">
         <p>Skills:</p>
         <ul>
-          {
-
-           creatureSkills.map((cSkill) =>
-              <li>{ cSkill }</li>
-           )
-          }
+          { creatureSkills }
         </ul>
         <p>Evolves into: <EvolvesInto creatureId={ profile.evolution } creatures={ creatures } /></p>
         <div className="table-responsive">
